@@ -104,27 +104,26 @@ public class ControlJson extends HttpServlet {
              }
              jsonResult += "}";*/
             DaoPersona oPersona = new DaoPersona(connection);
+            
             pojoPersona persona = new pojoPersona();
 
             persona.setId(0);
-            persona.setNombre("Amparo");
-            persona.setEdad(57);
-            persona.setTelefono(635562184);
-            persona.setDireccion("C/de artes");
+            persona.setNombre("Luis");
+            persona.setEdad(42);
+            persona.setTelefono(655421259);
+            persona.setDireccion("C/de la constitucion");
 
             pojoPersona persona1 = oPersona.set(persona);
             
-            Integer idPersona = oPersona.get(persona1).getId();
-            String nombrePersona = oPersona.get(persona1).getNombre();
-            Integer edadPersona = oPersona.get(persona1).getEdad();
-            Integer telefonoPersona = oPersona.get(persona1).getTelefono();
-            String direccionPersona = oPersona.get(persona1).getDireccion();
+            Integer id = oPersona.get(persona1).getId();
+            String nombre = oPersona.get(persona1).getNombre();
+            Integer edad = oPersona.get(persona1).getEdad();
+            Integer telefono = oPersona.get(persona1).getTelefono();
+            String direccion = oPersona.get(persona1).getDireccion();
             
             
-             String jsonResult = "{ " + idPersona + " },"
-                     + " { " + nombrePersona + " }, "
-                     + "{ " + edadPersona + " }, { " + telefonoPersona + " }, "
-                     + "{ " +direccionPersona +" }";
+             String jsonResult = "{ " + id + " }, {" + nombre + "}, {" + edad + "}, {" + telefono + "}, {" + direccion + "}";
+                   
 
             
             
